@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Pendaftaran</title>
+    <style>
+      body {
+        font-family: Franklin Gothic Medium, sans-serif;
+        background-color: steelblue;
+        margin: 50px;
+      }
+
+      .container {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      label {
+        display: block;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 440px;
+        padding: 10px;
+        margin: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      textarea {
+        width: 440px;
+        padding: 10px;
+        margin: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .error {
+        color: red;
+      }
+
+      input[type="submit"] {
+        margin: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required />
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required />
+
+        <label for="alamat">Alamat:</label>
+        <textarea
+          type="alamat"
+          id="alamat"
+          name="alamat"
+          required
+          cols="21"
+          rows="5"
+        ></textarea>
+
+        <input type="submit" value="Daftar" />
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        var nama = document.getElementById("nama").value;
+        var email = document.getElementById("email").value;
+
+        //nama (minimal 3 karakter)
+        if (nama.length < 3) {
+          alert("Format nama salah");
+          return false;
+        }
+
+        //email (format email)
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+          alert("Format Email Salah");
+          return false;
+        }
+        return valid;
+      }
+    </script>
+  </body>
+</html>

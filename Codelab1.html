@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codelab1</title>
+  </head>
+
+  <body>
+    <h1>Penjumlahan</h1>
+    <label for="angka1">Angka 1:</label>
+    <input type="text" id="angka1" /><br /><br />
+
+    <label for="angka2">Angka 2:</label>
+    <input type="text" id="angka2" /><br /><br />
+
+    <button onclick="hitungPenjumlahan()">Hitung</button>
+    <button onclick="resetForm()">Ulang</button><br /><br />
+
+    <script>
+      function hitungPenjumlahan() {
+        //ambil nilai dari inputan
+        var angka1 = parseFloat(document.getElementById("angka1").value);
+        var angka2 = parseFloat(document.getElementById("angka2").value);
+
+        //penjumlahan
+        var hasil = angka1 + angka2;
+
+        //hasil dalam pop up alert
+        alert("Hasil penjumlahan: " + hasil);
+      }
+
+      function resetForm() {
+        //reset nilai input dan hasil
+        document.getElementById("angka1").value = "";
+        document.getElementById("angka2").value = "";
+        alert("Form telah direset.");
+      }
+    </script>
+  </body>
+</html>
